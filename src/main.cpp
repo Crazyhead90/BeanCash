@@ -2540,9 +2540,9 @@ bool LoadBlockIndex(bool fAllowNew)
         //    CTxOut(empty)
         //  vMerkleTree: da3215e78c
 
-        const char* pszTimestamp = "13 Feb 2015 - BitBean launches and changes the world with it's awesomeness";
+        const char* pszTimestamp = "CNN - April 27 2018 - North and South Korean leaders hold historic summit";
         CTransaction txNew;
-        txNew.nTime = 1423862862;
+        txNew.nTime = 1526397467;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2552,11 +2552,11 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1423862862;
+        block.nTime    = 1526397467;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = !fTestNet ? 620091 : 98938;
+	block.nNonce   = 603143;
 
-        assert(block.hashMerkleRoot == uint256("0xda3215e78c191c4e5dd00e8ac2b57f71b20cdcad0c37562d39912df09a2f4d34"));
+        assert(block.hashMerkleRoot == uint256("0xa265b223baff53ca30d539ab13667939536b41ae69312aff7a94df8ef1c4d4e3"));
 
 	    block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
