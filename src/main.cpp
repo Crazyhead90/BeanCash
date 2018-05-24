@@ -46,11 +46,11 @@ unsigned int nTargetSpacing = 1 * 60; // Beancash - 1 minute
 
 static const int64_t nDiffChangeTarget = 1;
 
-unsigned int nStakeMinAge = 6 * 60 * 60; // Beancash - 6 hours
-unsigned int nStakeMaxAge = 6 * 60 * 60; // Beancash - 6 hours
+unsigned int nStakeMinAge = 5 * 60; // Beancash - 6 hours
+unsigned int nStakeMaxAge =  5 * 60; // Beancash - 6 hours
 unsigned int nModifierInterval = 10 * 60; // Beancash - time to elapse before new modifier is computed
 
-int nBeanbaseMaturity = 100;
+int nBeanbaseMaturity = 10;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
