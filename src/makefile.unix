@@ -24,15 +24,28 @@ ifdef STATIC
 endif
 
 # for boost 1.37, add -mt to the boost libraries
-LIBS += \
- -Wl,-B$(LMODE) \
-   -l boost_system$(BOOST_LIB_SUFFIX) \
-   -l boost_filesystem$(BOOST_LIB_SUFFIX) \
-   -l boost_program_options$(BOOST_LIB_SUFFIX) \
-   -l boost_thread$(BOOST_LIB_SUFFIX) \
-   -l db_cxx$(BDB_LIB_SUFFIX) \
-   -l ssl \
-   -l crypto
+BDB_LIB_SUFFIX=-5.3
+
+# Dependency library locations can be customized with:
+#    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
+#    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
+
+
+# ------- modify those to point to the correct folders ----- #
+
+BOOST_INCLUDE_PATH=/path/to/lib/boost_1_59_0
+BOOST_LIB_PATH=/path/to/lib/boost_1_59_0/stage/lib
+
+OPENSSL_INCLUDE_PATH=/path/to/libs/openssl-1.0.1j/include
+OPENSSL_LIB_PATH=/path/to/lib/openssl-1.0.1j
+
+BDB_INCLUDE_PATH=/path/to/lib/db-5.3.28.NC/build_unix
+BDB_LIB_PATH=/path/to/lib/db-5.3.28.NC/build_unix
+
+MINIUPNPC_INCLUDE_PATH=
+MINIUPNPC_LIB_PATH=
+QRENCODE_INCLUDE_PATH=
+QRENCODE_LIB_PATH=
 
 ifndef USE_UPNP
 	override USE_UPNP = -
