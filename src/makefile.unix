@@ -24,6 +24,10 @@ ifdef STATIC
 endif
 
 # for boost 1.37, add -mt to the boost libraries
+
+OPENSSL_INCLUDE_PATH=/home/pi/Downloads/openssl-1.0.2o/include
+OPENSSL_LIB_PATH=/home/pi/Downloads/openssl-1.0.2o
+
 LIBS += \
  -Wl,-B$(LMODE) \
    -l boost_system$(BOOST_LIB_SUFFIX) \
